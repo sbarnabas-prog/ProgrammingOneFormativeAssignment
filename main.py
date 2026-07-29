@@ -27,3 +27,19 @@ def menu():
 #In order for this function to run I have to call the funtion and assign it to a variable so that I can be able to print the menu list and what the user will select.
 user_selection = menu()
 print("You selected option: " + user_selection)
+
+#After a user has made a selcetion from the menu, I will use the if statements to check what they have selected and give the correct response.
+if user_selection=="1":
+    print("The choice you made is add homework")
+elif user_selection=="2":
+    print("The choice you made is add examination")
+elif user_selection=="3":
+    print("The choice you made is list assignments")
+elif user_selection=="4":
+    print("The choice you made is filter assignments")
+elif user_selection=="5":
+    print("The choice you made is show summary")
+elif user_selection=="0":
+    print("You have chosen to exit the program.")
+else:
+    print("This selection does not exist, please select an option from the menu given above.")
