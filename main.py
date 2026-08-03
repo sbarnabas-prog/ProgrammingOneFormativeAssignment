@@ -4,6 +4,25 @@
 
 print("A student grade/assignment tracker to enable users to record homework and exam results, view and filter assignments and display the grade summaries within a single terminal session.")
 
+#Creating function for each menu option
+def add_homework():
+    print("You now have to add your homework")
+
+def add_examination():
+    print("You now have to add your examination")
+
+def list_assignments():
+    print("By selecting this option, all your assignments will be displayed")
+
+def filter_assignments():
+    print("By selecting this option, you can filter all your assignments by month, subject or type")
+
+def show_summary():
+    print("You can now see all the summary of your assignments, exams, homeworks and grades")
+
+def exit_program():
+    print("You have chosen to exit the program.")
+
 #Creating a function that has a menu and input statements to allow users to make a choice from the menu
 def menu():
     print(" Below is a menu list where you can choose from;")
