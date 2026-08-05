@@ -38,28 +38,35 @@ def show_summary():
 def exit_program():
     print("You have chosen to exit the program.")
 
-#In order for this function to run I have to call the funtion and assign it to a variable so that I can be able to print the menu list and what the user will select.
-user_selection = menu()
 
+never_end = True
+
+#Creating function that makes the user see the menu list again untill they select to exit the program ,and this is possible with the while loop
+while never_end:
+
+    #In order for this function to run I have to call the funtion and assign it to a variable so that I can be able to print the menu list and what the user will select.
+    user_selection = menu()
+    
 #After a user has made a selcetion from the menu, I will use the if statements to check what they have selected and give the correct response.
-if user_selection=="1":
-    add_homework()
+    if user_selection=="1":
+        add_homework()
 
-elif user_selection=="2":
-    add_examination()
+    elif user_selection=="2":
+        add_examination()
 
-elif user_selection=="3":
-    list_assignments()
+    elif user_selection=="3":
+        list_assignments()
 
-elif user_selection=="4":
-    filter_assignments()
+    elif user_selection=="4":
+        filter_assignments()
 
-elif user_selection=="5":
-    show_summary()
+    elif user_selection=="5":
+        show_summary()
 
-elif user_selection=="0":
-    exit_program()
+    elif user_selection=="0":
+        exit_program()
+        never_end = False
 
-else:
-    print("This selection does not exist, please select an option from the menu given above.")
+    else:
+        print("This selection does not exist, please select an option from the menu given above.")
 
