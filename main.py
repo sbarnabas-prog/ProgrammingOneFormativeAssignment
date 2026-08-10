@@ -7,6 +7,20 @@ print("A student grade/assignment tracker to enable users to record homework and
 #Since we will later have different assignments, a list is now created to store these assignments
 assignments = []
 
+# I am now going to create a class named Assignment where all assignments will be stored.
+class Assignment:
+    def __init__(self, subject, title, score, max_score, due_date, assignment_type):
+        self.subject = subject
+        self.title = title
+        self.score = float(score)
+        self.max_score = float(max_score)
+        self.due_date = due_date
+        self.assignment_type = assignment_type
+ #I added float to score and max_score to enable users to enter decimal numbers where needed without getting an error in the terminal.
+ # I am now going to test if the class really works
+test = Assignment("Mathematics", "Calculus", 90.1, 100, "2026-08-16", "Homework")
+print(test.subject)   
+
 #Creating a function that has a menu and input statements to allow users to make a choice from the menu
 def menu():
     print(" Below is a menu list where you can choose from;")
@@ -69,4 +83,6 @@ while never_end:
 
     else:
         print("This selection does not exist, please select an option from the menu given above.")
+
+
 
