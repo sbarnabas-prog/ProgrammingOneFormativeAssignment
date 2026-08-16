@@ -85,10 +85,34 @@ def add_examination():
     tracker.add_assignment(examination)
 
 def list_assignments():
-    print("By selecting this option, all your assignments will be displayed")
+    print("LIST OF ASSIGNMENT")
+#To call list of assignments and display them
+    tracker.list_assignments()
 
 def filter_assignments():
-    print("By selecting this option, you can filter all your assignments by month, subject or type")
+    print("FILTER ASSIGNMENTS")
+    print("1.By Type")
+    print("2.By Subject")
+    print("3.By Due Date")
+
+    choice = input("Choose: ")
+    if choice == "1":
+        t = input ("Choose: Homework or Examination  ")
+        for assignment in tracker.assignments:
+            if assignment.assignment_type == t:
+                print(assignment.subject, assignment.title, assignment.score, assignment.due_date)
+
+    if choice =="2":
+        s = input ("Type Subject: ")
+        for assignment in tracker.assignments:
+            if assignment.subject == s:
+                print(assignment.subject, assignment.title, assignment.score, assignment.due_date)
+
+    if choice =="3":
+        d = input ("Enter due date(YYYY-MM-DD): ")
+        for assignment in tracker.assignments:
+            if assignment.due_date == d:
+                print(assignment.subject, assignment.title, assignment.score, assignment.due_date)
 
 def show_summary():
     print("You can now see all the summary of your assignments, exams, homeworks and grades")
