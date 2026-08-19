@@ -44,6 +44,32 @@ class tracker:
             for assignment in self.assignments:
                 print(f"Subject is {assignment.subject}, Title is {assignment.title}, Score is {assignment.score}/{assignment.max_score}, Due Date is {assignment.due_date}, Type is {assignment.assignment_type}")
 
+    def show_summary(self):
+        if len(self.assignments) == 0:
+            print("No assignment found")
+            return
+#Where return is used, if found no details entered the program stops
+        total_percentage = 0
+        highest = self.assignments[0]
+        lowest = self.assignments[0]
+
+        print("SCORES SUMMARY")
+        for assignment in self.assignments:
+            percentage = assignment.score / assignment.max_score * 100
+            print(f"Subject...{assignment.subject}, Title...{assignment.title}, Score...{percentage}")
+
+            total_percentage = total_percentage + percentage
+
+        average = total_percentage / len(self.assignments)
+        print(f"The overall average for all assignments is {average}")
+        if average < 50:
+            status = "IN DANGER!"
+        elif 50< average <= 70:
+            status = "GOOD CONDITION"
+        else:
+            status = "PASS"
+        print(f"Student status is {status}")
+
 #The tracker below is created to enable the user to add assignments and view them in a list
 tracker = tracker()
 
@@ -115,7 +141,7 @@ def filter_assignments():
                 print(assignment.subject, assignment.title, assignment.score, assignment.due_date)
 
 def show_summary():
-    print("You can now see all the summary of your assignments, exams, homeworks and grades")
+    tracker.show_summary()
 
 def exit_program():
     print("You have chosen to exit the program.")
